@@ -68,9 +68,9 @@ guess = []
 stageNumber = 0
 for i in range(len(answer)):
     guess.append('_')
-print('answer:', answer)
 def startGame():
     global stageNumber
+    levelFail = True
 
     guessString = ' '.join(guess)
     print(stage[stageNumber])
@@ -80,11 +80,11 @@ def startGame():
     for i in range(len(answer)):
         if userInput == answer[i]:
             guess[i] = userInput
+            levelFail = False
 
+    if levelFail == True:
+        stageNumber += 1
     
     startGame()
-
-
-
 
 startGame()
