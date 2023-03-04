@@ -77,6 +77,12 @@ def startGame():
     if stageNumber == 7:
         exit()
     print(guessString)
+
+    userAnswer = ''.join(guess)
+    if userAnswer == answer:
+        print('You win!')
+        exit()
+
     userInput = input('Enter your guess: ')
 
     for i in range(len(answer)):
