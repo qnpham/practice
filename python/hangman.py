@@ -84,11 +84,14 @@ def startGame():
         exit()
 
     userInput = input('Enter your guess: ')
-
-    for i in range(len(answer)):
-        if userInput == answer[i]:
-            guess[i] = userInput
-            levelFail = False
+    if len(userInput) > 1:
+        print('Only 1 character inputs allowed!')
+        levelFail = False
+    else:
+        for i in range(len(answer)):
+            if userInput == answer[i]:
+                guess[i] = userInput
+                levelFail = False
 
     if levelFail == True:
         stageNumber += 1
